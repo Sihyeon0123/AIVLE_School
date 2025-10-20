@@ -1,0 +1,14 @@
+
+https://numpy.org/doc/stable/reference/index.html
+
+https://pandas.pydata.org/docs/reference/index.html
+
+https://matplotlib.org/stable/gallery/index.html
+
+https://seaborn.pydata.org/api.html
+
+https://www.tensorflow.org/api_docs/python/tf
+
+https://scikit-learn.org/stable/api/index.html
+
+https://xgboost.readthedocs.io/en/stable/
