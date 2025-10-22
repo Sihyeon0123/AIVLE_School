@@ -1,0 +1,14 @@
+# Python 관련 기본 제외
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+
+# 환경변수/키 파일 제외
+.env
+*.env
+secrets/
