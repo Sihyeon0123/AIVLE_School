@@ -1,0 +1,35 @@
+max_length_overall = 0
+max_text_overall = ""
+
+def preprocess_function(examples):
+    global max_length_overall, max_text_overall
+    
+    encodings = tokenizer(
+        examples['text'],
+        truncation=True,
+        padding='max_length',
+        max_length=128
+    )
+    
+    # labels float 변환
+    encodings['label'] = [list(map(float, l)) for l in examples['label']]
+    
+    # 각 배치에서 가장 긴 문장 확인
+    for text in examples['text']:
+        tokens_no_trunc = tokenizer(text, truncation=False)['input_ids']
+        if len(tokens_no_trunc) > max_length_overall:
+            max_length_overall = len(tokens_no_trunc)
+            max_text_overall = text
+    
+    return encodings
+
+
+# 전처리 적용
+train_ts = train_ts.map(preprocess_function, batched=True)
+val_ts = val_ts.map(preprocess_function, batched=True)
+
+# 학습 후 가장 긴 문장 출력
+if max_length_overall > 128:
+    print(f"배치 전체에서 가장 긴 문장({max_length_overall} 토큰) 잘림:\n{max_text_overall}")
+else:
+    print("max_length를 초과하는 문장이 없습니다.")
