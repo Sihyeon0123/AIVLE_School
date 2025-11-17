@@ -1,0 +1,25 @@
+package com.chap04;
+
+import java.util.Scanner;
+
+public class PyramidWhile {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int i=1;
+        while (i<=n){
+            int spaces=1;
+            while (spaces <= n-i){
+                System.out.print(" ");
+                spaces++;
+            }
+            int stars=1;
+            while (stars <= i*2-1){
+                System.out.print("*");
+                stars++;
+            }
+            System.out.println("");
+            i++;
+        }
+    }
+}
