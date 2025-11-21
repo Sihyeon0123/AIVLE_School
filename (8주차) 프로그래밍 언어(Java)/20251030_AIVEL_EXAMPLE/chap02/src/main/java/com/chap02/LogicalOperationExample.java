@@ -3,7 +3,7 @@ package com.chap02;
 public class LogicalOperationExample {
 
     public static void main(String[] args) {
-        int num1 = 3, num2 = 4,calcResult = 0;
+        int num1 = 3, num2 = 4;
         boolean logicResult = true;
 
         logicResult = (num1 > num2) && (num1 < num2);

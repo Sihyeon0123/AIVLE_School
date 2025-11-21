@@ -20,7 +20,8 @@ public class OperatorPrecedence {
         // condition이 true, 따라서 전체 조건은 true || false && false임.
         // && 연산이 먼저 수행되므로, false && false가 false를 결과로 함.
         // 최종적으로 true || false는 true임.
-        boolean result = condition || false && false;
+        // boolean result = condition || false && false;
+        boolean result = condition || false;
         System.out.println("condition || false && false = " + result); // 결과: true
 
         // 비트 연산자 예제
