@@ -1,0 +1,65 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">&#48120;&#47000;&#49556; &#49888;&#49849;&#52384;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">733300.000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">&#48120;&#47000;&#49556; &#49888;&#49849;&#52384;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x010100EEFD2EC9AE4E1C4E97A968ACD5F6A537</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+    <body>
+        <h3 id="title">* 화살표 함수</h3>
+        <p>화살표 함수는 익명 함수를 보다 간편하게 표현해 준다.</p>
+        <p>람다식과 비슷한 개념이다.</p>
+        <p>다만 람다식 처럼 -> 가 아닌 뚱뚱한 화살표(Fat Arrow) => 를 사용 한다.</p>
+        <p>다만 기존 익명 함수와는 차이점이 존재 한다.</p>
+    </body>
+    <script>
+
+        //I. 사용법
+        function func_name(x,y){
+            console.log(x+y);
+        }
+        func_name('func_name:',3,5);
+
+        /* 위 함수를 화살표 함수로 축약하여 아래 x1 변수에 담아보자 */
+        const x1 = null;
+        x1(5,5)
+
+        /* 출력문만 존재하는 화살표 함수를 더 축약해 보자 */
+        const x2 = (x,y) => {
+            console.log('x2:',x*y);
+        }
+        x2(4,3);
+
+        /* 출력문만 존재하는 인자값이 하나인 화살표 함수를 더 축약해 보자 */
+        const x3 = (x) => {
+            console.log('x3:',x*x);
+        }
+        x3(4);
+
+        //II. 차이점
+        //1. hoist 가 안된다.
+        //hoist : 함수 선언이 어디에 되어있던지 가장 위로 '끌어올려져' 호출부 보다 밑에 있어도 정상 동작하는 기능
+        hoist();
+        function hoist(){
+            console.log("hoist 된다.");
+        }		
+    </script>
+</html>

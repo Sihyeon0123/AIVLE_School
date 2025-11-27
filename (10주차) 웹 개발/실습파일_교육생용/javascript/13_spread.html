@@ -1,0 +1,78 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">&#48120;&#47000;&#49556; &#49888;&#49849;&#52384;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">732200.000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">&#48120;&#47000;&#49556; &#49888;&#49849;&#52384;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x010100EEFD2EC9AE4E1C4E97A968ACD5F6A537</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+    <body>
+        <h3 id="title">Parameter</h3>
+    </body>
+    <script>    
+
+    const arr = ['a','b','c','d']    
+    let new_num = [];
+    /*spread 연산자 없이 arr배열을 new_num 배열에 복사하는 코드를 작성하시오*/
+
+    /*spread 연산자로 arr배열을 new_arr 배열에 복사하는 코드를 작성하시오*/
+    const new_arr = []; 
+    console.log(new_arr);
+
+    
+    const num = [2,3,4]
+    new_num = [1,...num,5] // 이렇게 중간에 끼워 넣기도 가능하다.
+    console.log(new_num)
+
+    // Object 에도 활용 가능 하다.
+    const person = {}
+    person.name = "lee";
+    person.gender = "male";
+    person.age = 26;
+
+    //Object 형태는 그냥 볼 수 없고 이렇게 처리를 해 줘야 한다.
+    console.log({...person})
+    const car = {type:"SUV", model:'P300', color:"white"};
+    car.user = {...person}; // 객체에 값을 넣기
+    console.log(car);
+
+    // 함수의 매개변수에도 유용 하다.
+    function plus(x, y = 10) {
+        return x + y;
+    }
+    console.log('plus(5,5):',plus(5,5));//두개가 들어올 경우 상관 없지만
+    console.log('plus(5):',plus(5));//하나만 들어오면 하나는 기본값으로 대체한다.(Not A Number)
+
+
+    /* 여러개의 인자값을 대응 할수 있도록 함수에 스프레드 연산자를 활용해 보자 */
+    function sum(params) {
+        console.log('params',params); // 매개변수에서는 들어오는 인자값을 배열형태로 받아주는 역활
+        let sum = 0;
+        for(let param of params){
+            sum += param;  
+        } 
+        return sum;
+    }
+    console.log('인자값 2개: ',sum(10,20));
+    console.log('인자값 3개: ',sum(1,2,3));
+    console.log('인자값 5개: ',sum(1,2,3,4,5));
+    
+    </script>
+</html>

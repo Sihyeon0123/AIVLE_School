@@ -1,0 +1,90 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">&#48120;&#47000;&#49556; &#49888;&#49849;&#52384;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">732800.000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">&#48120;&#47000;&#49556; &#49888;&#49849;&#52384;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x010100EEFD2EC9AE4E1C4E97A968ACD5F6A537</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+    <body>
+
+    </body>
+    <script>
+        class Car{ //클래스 선언
+            constructor(color,name,price){
+				console.log('constructor:'+color+'/'+name+'/'+price);
+                this.color = color;
+                this.name = name;
+                this.price = price;
+            }
+
+            //함수 선언시 선언키워드를 사용하지 않는다.
+            getInfo(){
+                console.log(this.name+' 의색상  : '+this.color);
+                console.log(this.name+' 의가격  : '+this.price);
+            }
+
+            start(){
+                console.log(this.name+" 의 시동을 걸다.");
+            }
+
+			change(n){
+				console.log(n+' 단으로 기어를 변속 합니다.');
+			}
+			
+        }
+
+        //클래스 사용
+        const myCar = new Car('red','ferrari 488', 700000000);
+        myCar.getInfo();//클래스의 특정 메서드 실행은 물론...
+        myCar.start();
+        console.log(myCar.name);//특정 필드만 가져올수 있다.
+		console.log('=======================================');
+
+        //상속 기능
+        class OptionCar extends Car{
+            constructor(color,name,price,option){
+                super(color,name,price);//부모 키워드 super() 사용도 가능
+                this.option = option;
+            }
+
+			//override?
+			start(){			
+				console.log(this.name+" 의 시동을 힘차게 걸다.");
+			}
+
+            //overload?
+   			start(turbo){			
+				console.log(this.name+" 의 시동을 힘차게 걸다.(turbo : "+turbo+")");
+			}
+			
+            getOption(){
+				super.change(3); // super 로 부모의 함수를 호출 할 수 있다
+                console.log(this.name+"의 옵션은 "+this.option+" 입니다.");
+            }
+
+        }
+
+        const car = new OptionCar('red','ferrari 488', 700000000, 'Full Option');
+        car.start();//부모의 기능도 사용 가능하고
+        car.getOption();//자신의 기능도 물론 사용 가능
+
+    </script>
+</html>

@@ -1,0 +1,61 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:xd_Signature msdt:dt="string"></mso:xd_Signature>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">&#48120;&#47000;&#49556; &#49888;&#49849;&#52384;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">732700.000000000</mso:Order>
+<mso:xd_ProgID msdt:dt="string"></mso:xd_ProgID>
+<mso:_ExtendedDescription msdt:dt="string"></mso:_ExtendedDescription>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">&#48120;&#47000;&#49556; &#49888;&#49849;&#52384;</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ComplianceAssetId msdt:dt="string"></mso:ComplianceAssetId>
+<mso:TemplateUrl msdt:dt="string"></mso:TemplateUrl>
+<mso:ContentTypeId msdt:dt="string">0x010100EEFD2EC9AE4E1C4E97A968ACD5F6A537</mso:ContentTypeId>
+<mso:TriggerFlowInfo msdt:dt="string"></mso:TriggerFlowInfo>
+<mso:_SourceUrl msdt:dt="string"></mso:_SourceUrl>
+<mso:_SharedFileIndex msdt:dt="string"></mso:_SharedFileIndex>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+    <body>
+
+    </body>
+    <script>    
+        //1. 비동기 방식의 문제점
+        /* plus(5) 실행시 답이 0이 나오는 이유를 주석으로 추가해 보자*/
+        function plus(a){
+            let result = 0;
+            setTimeout(function(){
+                result = a+10;
+            },100);
+            console.log(result);
+        }
+
+        //plus(5) 를 구하시오
+        plus(5);    
+        
+		
+		// 2. 그래서 특정 내용이 끝나고 그 다음 실행하는 콜백 함수를 사용 한다.
+        function plus_call(a,onResult){//계산할 값, callBack(다 끝나고 얘 실행 해)   
+            setTimeout(function(){
+                onResult(a+10);
+            },100);
+        }
+        
+        // 3. 5가 들어가고 난 후에 무언가(console 로 받은값 찍기)를 한다.        
+        plus_call(5,function(result){
+            console.log("답 : "+result);//callBack 에서 리턴은 안된다.
+		});
+
+        /* 위 내용을 화살표 함수로 축약해 보자 */
+
+
+
+    </script>
+</html>
