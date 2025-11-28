@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Page Title</title>
+        <style>
+
+        </style>
+	</head>
+	<body>
+		<button onclick="arrPush()">push</button>
+        <button onclick="arrPop()">pop</button>
+        <button onclick="arrUnshift()">unshift</button>
+        <button onclick="arrShift()">shift</button> 		
+        <button onclick="arrSlice()">범위 자르기</button>
+	</body>
+    <script>
+        const arr = [];
+		let i = 1;
+       
+        //push 함수를 사용 하면 방번호와 상관 없이 뒤로 배열을 추가 한다.
+        function arrPush(){
+            /* 해당 구문을 추가해 보자 */
+            i++;
+            console.log(arr); 
+        }
+
+        //pop 함수를 사용 하면 뒤에서 부터 배열 값을 뺀다.
+         function arrPop(){
+            let num = null; /* 해당 구문을 추가해 보자 */
+            console.log("빠진 값 : ", num);
+            console.log(arr); 
+        }       
+
+        //unshift 함수를 사용하면 앞 에서 부터 배열을 추가한다.
+        function arrUnshift(){
+            /* 해당 구문을 추가해 보자 */
+            i++
+            console.log(arr); 
+        }
+        
+        //shift 함수를 사용하면 앞에서 부터 배열값을 뺀다.
+        function arrShift(){            
+            let num = null; /* 해당 구문을 추가해 보자 */
+			console.log("빠진 값 : ", num);
+            console.log(arr); 
+        } 
+
+		//범위 자르기(원본데이터는 보존된다.)
+		function arrSlice(){
+            numArr = [0,1,2,3,4,5];
+            console.log(numArr);
+            let newArr = null; /* 해당 구문을 추가해 보자 */      
+            console.log(newArr);
+            console.log(numArr);
+        }
+
+	    let infos = [
+            {id: 1, name: '김지훈', grade:'A',score:95},
+            {id: 2, name: '이지훈', grade:'C',score:70},
+            {id: 3, name: '박지훈', grade:'B',score:82},
+            {id: 4, name: '나지훈', grade:'A',score:93},
+            {id: 5, name: '라지훈', grade:'C',score:71},
+            {id: 6, name: '마지훈', grade:'C',score:70},
+        ];
+
+        //기존 값에 학생 이라는 단어를 붙여 students 라는 새로운 배열을 생성
+        let students = infos.map(info => {
+            /* 해당 구문을 추가해 보자 */
+            return info;
+        });
+        console.log(students);
+
+        //당연하게 배열안의 오브젝트의 특정 값을 뽑아 새로운 배열을 만드는 것도 가능 하다.
+        let ids = null; /* 해당 구문을 추가해 보자 */
+        console.log(ids);
+		
+        //filter : 특정 조건을 만족하는 데이터 만을 보아 새로운 배열로 반환
+        let supple = students.filter(/*해당 구문을 추가해 보자*/);
+        console.log('보충반:',supple);
+    </script>
+</html>

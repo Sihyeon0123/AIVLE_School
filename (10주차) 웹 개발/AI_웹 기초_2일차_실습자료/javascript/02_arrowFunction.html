@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    </head>
+    <body>
+        <h3 id="title">* 화살표 함수</h3>
+        <p>화살표 함수는 익명 함수를 보다 간편하게 표현해 준다.</p>
+        <p>람다식과 비슷한 개념이다.</p>
+        <p>다만 람다식 처럼 -> 가 아닌 뚱뚱한 화살표(Fat Arrow) => 를 사용 한다.</p>
+        <p>다만 기존 익명 함수와는 차이점이 존재 한다.</p>
+    </body>
+    <script>
+
+        //I. 사용법
+        function func_name(x,y){
+            console.log(x+y);
+        }
+        func_name('func_name:',3,5);
+
+        /* 위 함수를 화살표 함수로 축약하여 아래 x1 변수에 담아보자 */
+        const x1 = null;
+        x1(5,5)
+
+        /* 출력문만 존재하는 화살표 함수를 더 축약해 보자 */
+        const x2 = (x,y) => {
+            console.log('x2:',x*y);
+        }
+        x2(4,3);
+
+        /* 출력문만 존재하는 인자값이 하나인 화살표 함수를 더 축약해 보자 */
+        const x3 = (x) => {
+            console.log('x3:',x*x);
+        }
+        x3(4);
+
+        //II. 차이점
+        //1. hoist 가 안된다.
+        //hoist : 함수 선언이 어디에 되어있던지 가장 위로 '끌어올려져' 호출부 보다 밑에 있어도 정상 동작하는 기능
+        hoist();
+        function hoist(){
+            console.log("hoist 된다.");
+        }		
+    </script>
+</html>

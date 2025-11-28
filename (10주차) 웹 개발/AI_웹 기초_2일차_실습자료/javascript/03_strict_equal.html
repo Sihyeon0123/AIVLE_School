@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    </head>
+    <body>
+        <h3 id="title"></h3>
+    </body>
+    <script>    
+
+    /* 아래 코드 실행시 참과 거짓을 예측해서 주석으로 추가해 봅시다 */
+    // 1) 숫자와 문자열
+    console.log(2 == '2');   //true
+    console.log(2 === '2');  //false
+
+    // 2) 불리언과 숫자
+    console.log(false == 0);  
+    console.log(false === 0); 
+
+    // 3) 빈 문자열과 불리언
+    console.log('' == false);  
+    console.log('' === false); 
+
+    // 4) null과 undefined (==의 특별 규칙)
+    console.log(null == undefined);  
+    console.log(null === undefined); 
+
+    // 5) 문자열 원시값 vs String 객체
+    console.log('abc' == new String('abc'));   
+    console.log('abc' === new String('abc'));  
+    </script>
+</html>

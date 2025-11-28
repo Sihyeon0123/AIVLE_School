@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    </head>
+    <body>
+        <h3>*Promise</h3>
+        <p>비동기 프로그래밍에서 발생할 수 있는 문제점과 콜백에 재해서 알아보았다.</p>
+        <p>그리고 콜백의 문제점에 대해서도 확인해 보았다.</p>
+        <p>이제는 이 콜백 지옥을 탈출할 방법인 Promise 와</p>
+        <p>Promise 를 보다 더 쉽게 사용할 수 있는 async & await 에 대해 알아보자</p>
+    </body>
+    <script>
+        //콜백 지옥을 벗어나기 위해 Promise 를 사용 해 보자
+        
+        function plus(a,b){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log('plus',a,b);
+                    resolve(a+b);//resolve:성공시 호출 콜백, reject:실패시 호출 콜백
+                },100);
+            });
+        }
+        
+        function multi(a,b){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log('multi',a,b);
+                    resolve(a*b);
+                },100);
+            });
+        }
+
+        function divide(a,b){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    console.log('divide',a,b);
+                    resolve(a/b);
+                },100);
+            });
+        }  
+
+
+    //이렇게 Promise 로 받은 내용은 then() 을 통해서 한번 더 처리 하는것이 번거롭다.
+    //하지만 async와 await 문법을 사용하면 좀 더 편리하게 처리 가능 하다.
+    function getResult(){
+        /* 교안의 예시처럼 콘솔에 출력하기 위한 코드를 작성하시오 */
+    }
+    getResult();	
+    
+    </script>
+</html>

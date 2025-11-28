@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>회원가입 Page</title>
+        <link rel="icon" href="../img/favicon.png">
+        <style>
+            table, th,td{
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td{
+                padding: 10px;
+            }
+            input[type="text"],input[type="password"],input[type="email"]{
+                width:100%;
+            }
+            input[type="range"]{
+                width:100%;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2>회원가입 페이지</h2>
+        <hr/>
+        <form action="" method="get">
+            <table>
+                <tr>
+                    <th>아이디</th>
+                    <td>
+                        <input type="text" name="uesrId" value=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td>
+                        <input type="password" name="uesrPw" value=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>비밀번호 확인</th>
+                    <td>
+                        <input type="password" name="uesrPw" value=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>이&nbsp;&nbsp;&nbsp;&nbsp;름</th><!--공백문자-->
+                    <td>
+                        <input type="text" name="uesrName" value=""/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>이 메 일</th>
+                    <td><input type="email" name="email" value=""/></td>
+                </tr>
+                <tr>
+                    <th>생년월일</th>
+                    <td>
+                        <select name="years">
+                            <option value="1985">1985</option>
+                            <option value="1986">1986</option>
+                            <option value="1997" selected>1997</option>
+                        </select>
+                        <select name="month">
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04" selected>04</option>
+                        </select>
+                        <select name="day">
+                            <option value="01" selected>01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                        </select>                
+                    </td>
+                </tr>
+                <tr>
+                    <th>성별</th>
+                    <td>
+                        <input type="radio" name="gender" value="male"> 남자
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="gender" value="female"> 여자
+                    </td>
+                </tr>
+                <tr>
+                    <th>취미</th>
+                    <td>
+                        <input type="checkbox" name="hobby" value="drive"> 드라이브
+                        <input type="checkbox" name="hobby" value="sports"> 스포츠
+                        <input type="checkbox" name="hobby" value="game"> 게임
+                        <input type="checkbox" name="hobby" value="fishing"> 낚시
+                    </td>
+                </tr>
+                <tr>
+                    <th>나이</th>
+                    <td>
+                        <input type="number" name="age" min="20" max="100" value="20">
+                    </td>
+                </tr>
+                <tr>
+                    <th>보안등급</th>
+                    <td>
+                    <input type="range" name="security" min="0" max="20" value="0" step="10">
+                    </td>
+                </tr>            
+            </table>
+        </form>
+    </body>
+</html>

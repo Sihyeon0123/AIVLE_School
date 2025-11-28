@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        class Car{ //클래스 선언
+            constructor(color,name,price){
+				console.log('constructor:'+color+'/'+name+'/'+price);
+                this.color = color;
+                this.name = name;
+                this.price = price;
+            }
+
+            //함수 선언시 선언키워드를 사용하지 않는다.
+            getInfo(){
+                console.log(this.name+' 의색상  : '+this.color);
+                console.log(this.name+' 의가격  : '+this.price);
+            }
+
+            start(){
+                console.log(this.name+" 의 시동을 걸다.");
+            }
+
+			change(n){
+				console.log(n+' 단으로 기어를 변속 합니다.');
+			}
+			
+        }
+
+        //클래스 사용
+        const myCar = new Car('red','ferrari 488', 700000000);
+        myCar.getInfo();//클래스의 특정 메서드 실행은 물론...
+        myCar.start();
+        console.log(myCar.name);//특정 필드만 가져올수 있다.
+		console.log('=======================================');
+
+        //상속 기능
+        class OptionCar extends Car{
+            constructor(color,name,price,option){
+                super(color,name,price);//부모 키워드 super() 사용도 가능
+                this.option = option;
+            }
+
+			//override?
+			start(){			
+				console.log(this.name+" 의 시동을 힘차게 걸다.");
+			}
+
+            //overload?
+   			start(turbo){			
+				console.log(this.name+" 의 시동을 힘차게 걸다.(turbo : "+turbo+")");
+			}
+			
+            getOption(){
+				super.change(3); // super 로 부모의 함수를 호출 할 수 있다
+                console.log(this.name+"의 옵션은 "+this.option+" 입니다.");
+            }
+
+        }
+
+        const car = new OptionCar('red','ferrari 488', 700000000, 'Full Option');
+        car.start();//부모의 기능도 사용 가능하고
+        car.getOption();//자신의 기능도 물론 사용 가능
+
+    </script>
+</html>

@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    </head>
+    <body>
+        <h3 id="title">Symbol</h3>
+        <p>Symbol 은 ES6 에서 새롭게 추가된 데이터 타입이다.</p>
+        <p>변경이 불가능한 원시 타입값으로 충돌의 위험이 없는 객체 프로퍼티 키 이다.</p>
+    </body>
+    <script>
+        const s1 = Symbol('id');//symbol 생성
+        console.log(s1);//Symbol()
+        const s2 = Symbol('id');//Symbol() 안의 문자열은 Symbol에 대한 설명(description)용도로만 사용
+        console.log(s2);
+        //자바의 객체처럼 생성된 Symbol 들은 고유의 값을 갖기 때문에 서로 같지 않다.
+        console.log(s1 === s2);
+
+        //사용법(절대 겹치지 않는 점을 이용해 키로 사용)
+        //실수로 키이름이 겹치면 값이 덮어진다.
+        let info = {};
+        info['id001'] = '001';
+        info['id002'] = '002';
+        info['id001'] = '003';
+        info['id002'] = '004';
+        console.log(info);
+
+        //Symbol() 을 사용하면 그럴 위험성이 사라진다.
+        let obj = {};        
+        obj[Symbol()] = '001';
+        obj[Symbol()] = '002';
+        obj[Symbol()] = '003';
+        obj[Symbol()] = '004';
+        console.log(obj);   
+
+        //Symbol() 의 실제 활용
+        let names = ['Kim','Lee','Park','Kang','Na'];
+        let keys = [];
+        let person = [];
+        for (name of names){ 
+            let key = Symbol(); // 절대로 겹치지 않을 키 생성
+            keys.push(key);     // 키 저장
+            person[key] = {name:name, info:name+'과 관련된 정보들...'}; // 키와 함께 값 넣기
+        }
+        console.log(person);
+
+        // 불러올때 - 저장한 키를 이용해 값 빼오기
+        //{name:'Lee', 'info':'Lee 와 관련된 정보들...'} 이 출력 될 수 있도록 코드를 추가하시오
+    
+    </script>
+</html>
