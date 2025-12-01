@@ -5,7 +5,8 @@ const PropBtn = ({name})=>{//App 에서 전달 해준 name 값을 {name} 형태�
     }
     return(
         <div style={{margin:10}}>
-            {/* 부모로 부터 받은 name 을 sendMsg 함수를 통해 실행해 보자 */}
+            <button onClick={()=>sendMsg(name)}>Click Me</button>
+            {name}
         </div>
     );
 }

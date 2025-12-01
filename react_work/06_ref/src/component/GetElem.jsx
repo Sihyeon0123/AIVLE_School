@@ -10,6 +10,8 @@ export default function GetElem() {
 
     const txtFocus=() => {
         /* 동작 결과를 보고 이 곳을 작성해 봅시다. */
+        setVal('');
+        inputRef.current.focus();   
     };
 
     return(

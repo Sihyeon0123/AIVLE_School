@@ -6,7 +6,7 @@ import List from "./comp/List.jsx";
 export default function App() {
 
     const [input, setInput] = useState('');
-    const [list,setList] = useState([]);
+    const [list, setList] = useState([]);
 
     //실제로 데이터를 받아온다고 가정하고 받아온 데이터를 통해 리스트를 만들자
     useEffect(() => {
@@ -26,15 +26,27 @@ export default function App() {
 
     // 할일 추가
     const onInsertHandler=() => {
+        console.log(input+' insert!');
         // id 증가
+        id.current += 1;
         // id, text, done을 state 에 추가
+        const newTodo = {
+            id: id.current,
+            text: input,
+            done: false 
+        };
+        setList([...list, newTodo]);
+        setInput('');
     };
 
     // 할일 처리(체크, 취소선 처리)
     const onToggleHandler=(id) => {
         // list 에서 클릭한 id 값과 동일한 값이 있는 인덱스를 찾아서
+        let index= list.findIndex((item)=>item.id === id);
         // state 값을 변경한다.
+        list[index].done = !list[index].done;
         // 그리고 변경된 값을 저장
+        setList([...list]); 
     };
 
     const onDeleteHander=(id) => {        

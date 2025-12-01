@@ -23,9 +23,10 @@ export default function Comp(){
 
     const alertCount=() => {
         setTimeout(() => {
-            alert("You clicked ON : "+count);// 그래서 alert 이 되는 순간 값을 업데이트 하지 못한다.
+            // alert("You clicked ON : "+count);// 그래서 alert 이 되는 순간 값을 업데이트 하지 못한다.
             /* alert 이후에도 값이 update 되도록 코드를 작성해 보자 */
-        }, 3000);
+            alert("You clicked ON : "+refVal.current);
+        }, 1000);
     }
 
     return (

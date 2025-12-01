@@ -2,7 +2,10 @@ import { useState } from "react";
 
 export default function Inputs() {
 
-    const [inputs, setInputs] = useState({nick:'',name:''});
+    const [inputs, setInputs] = useState({
+        nick:'',
+        name:''
+    });
     /* input 안에는 {name:'',nick:''} 의 값이 있다.
     본래
     let name = input.name;
@@ -17,7 +20,7 @@ export default function Inputs() {
         let val = e.target.value;
         console.log(key+" : "+val);
         /*setInput 함수를 활용 하여 inputs 를 복사 후 키:값 형태로 추가해 보자*/
-        setInputs({});
+        setInputs({...inputs, [key]: val});
     }
 
     const resetProc=(e) => {

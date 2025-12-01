@@ -7,6 +7,7 @@ export default function Input(){
     function getText(e){
         console.log(e.target.value);
         /* 입력내용이 표시되도록 코드를 작성해 보자*/
+        setText(e.target.value);
     }
 
     return(

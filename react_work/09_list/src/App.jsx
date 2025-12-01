@@ -11,7 +11,7 @@ function App() {
     ];
 
     /* Blog 컴포넌트에 posts 를 넘겨줄수 있는 코드를 추가하자 */
-    return <Blog />;
+    return <Blog posts={posts} />;
 
 }
 
