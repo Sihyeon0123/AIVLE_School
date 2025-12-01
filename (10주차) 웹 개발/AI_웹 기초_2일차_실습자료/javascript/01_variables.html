@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    </head>
+    <body>
+        <h3>var, let, const</h3>
+        <p>기존 자바스크립트 에서는 변수 선언시 var 로 선언하였다.</p>
+        <p>하지만 ECMA SCRIPT 6 에서부터 let 과 const 가 추가 되었다.</p>
+        <p>let 은 블록단위 에 동작되는 변수 이다.</p>
+		<p>var 는 함수단위에 동작되는 변수 이며 현재 사용을 권장하지 않는다.</p>
+        <p>const 는 상수이며 한번 선언된 값을 변경 할 수 없다.</p>        
+    </body>
+    <script>
+        let global = '전역변수';
+
+        function test(){
+            let global="지역변수";
+            console.log(global); // let 은 철저히 영역에 제한을 받는다. 그래서 이 영역에선 지역변수가
+        }
+        test();
+        console.log(global);//여기선 전역변수가 출력되게 된다.
+        
+        function test2(){
+            if(true){//하지만 블록 안에서는 이야기가 달라진다.
+                var scope = "함수영역";//블록 안에 선언된 내용이 밖의 내용에 영향을 미친다.
+                let local = "블록영역";//하지만 let 은 철저히 블록 안에서만 동작 된다.
+            }
+            console.log(scope); // var 는 함수 영역 변수라 선언된 scope 외에서도 동작가능하다.(이게 혼란스러워서 사용권고 안함)
+            console.log(local); // let 은 생성된 영역을 벗어나지 못한다.
+        }
+        test2();
+
+        const x = 10;
+        x=30;//상수이므로 변경 불가
+    </script>
+</html>

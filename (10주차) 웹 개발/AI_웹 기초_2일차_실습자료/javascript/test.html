@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Page Title</title>
+        <style>
+            div{
+                width: 250px;
+                height: 250px;
+                background-color: yellowgreen;
+            }
+        </style>
+	</head>
+    <!--onload : html 문서가 다 읽히면 일어나는 이벤트-->
+    <body onload="alert('loading 끝')">
+
+        <input type="text" onkeyup="typing(event)"/>
+
+        <select onchange="selectOne(this)">
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+            <option value="Benz">Benz</option>
+            <option value="Volvo">Volvo</option>
+        </select>
+	</body>
+    <script>
+        function typing(evt){
+          console.log(evt);
+        }
+
+		//change 는 요소안의 값 변화가 일어날때 발동 된다.
+    function selectOne(elem){
+      console.log(elem);
+    }
+    </script>
+</html>

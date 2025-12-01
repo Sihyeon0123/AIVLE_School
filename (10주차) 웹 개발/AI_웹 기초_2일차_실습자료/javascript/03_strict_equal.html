@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    </head>
+    <body>
+        <h3 id="title"></h3>
+    </body>
+    <script>    
+/*
+    == (느슨한 동등): 필요하면 타입을 자동 변환한 뒤 값만 비교합니다.
+    === (엄격한 동등): 타입 변환을 하지 않고, 타입과 값이 모두 같아야 합니다.
+    일반적인 권장: 예측 가능한 코드를 위해 기본적으로 ===를 쓰고, ==는 의도적으로 타입 강제를 활용할 때만 사용​
+*/
+    // 1) 숫자와 문자열
+    console.log(2 == '2');   // true  (문자열 '2' → 숫자 2로 변환)
+    console.log(2 === '2');  // false (타입 다름: number vs string)
+
+    // 2) 불리언과 숫자
+    console.log(false == 0);  // true  (false → 0)
+    console.log(false === 0); // false (boolean vs number)
+
+    // 3) 빈 문자열과 불리언
+    console.log('' == false);  // true  ('' → 0, false → 0)
+    console.log('' === false); // false (string vs boolean)
+
+    // 4) null과 undefined (==의 특별 규칙)
+    console.log(null == undefined);  // true  (유일하게 서로만 느슨히 같음)
+    console.log(null === undefined); // false (타입 다름)
+
+    // 5) 문자열 원시값 vs String 객체
+    console.log('abc' == new String('abc'));   // true  (객체가 원시값으로 변환되어 비교)
+    console.log('abc' === new String('abc'));  // false (string vs object)
+
+
+
+    </script>
+</html>

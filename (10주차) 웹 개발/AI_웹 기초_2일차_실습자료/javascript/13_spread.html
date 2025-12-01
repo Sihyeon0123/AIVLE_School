@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    </head>
+    <body>
+        <h3 id="title">Parameter</h3>
+    </body>
+    <script>    
+
+    const arr = ['a','b','c','d']    
+    /* spread 연산자 없이 배열 복사 하는 방법
+    let new_num = [];
+    for(let n of arr){
+        new_num.push(n);
+    }
+    */
+
+    //console.log(...arr) // 배열에 있는 값을 가져온다.
+    const new_arr = [...arr]; // 그래서 이렇게 배열을 복사할때 활용 된다.
+    console.log(new_arr);
+
+    
+    const num = [2,3,4]
+    const new_num = [1,...num,5] // 이렇게 중간에 끼워 넣기도 가능하다.
+    console.log(new_num)
+
+    // Object 에도 활용 가능 하다.
+    const person = {}
+    person.name = "lee";
+    person.gender = "male";
+    person.age = 26;
+
+    //Object 형태는 그냥 볼 수 없고 이렇게 처리를 해 줘야 한다.
+    console.log({...person})
+    const car = {type:"SUV", model:'P300', color:"white"};
+    car.user = {...person}; // 객체에 값을 넣기
+    console.log(car);
+
+    // 함수의 매개변수에도 유용 하다.
+    function plus(x, y = 10) {
+        return x + y;
+    }
+    console.log('plus(5,5):',plus(5,5));//두개가 들어올 경우 상관 없지만
+    console.log('plus(5):',plus(5));//하나만 들어오면 하나는 기본값으로 대체한다.(Not A Number)
+
+
+    function sum(...params) {
+        console.log('...params',params); // 매개변수에서는 들어오는 인자값을 배열형태로 받아주는 역활
+        let sum = 0;
+        for(let param of params){
+            sum += param;  
+        } 
+        return sum;
+    }
+    console.log('인자값 2개: ',sum(10,20));
+    console.log('인자값 3개: ',sum(1,2,3));
+    console.log('인자값 5개: ',sum(1,2,3,4,5));
+    
+    </script>
+</html>

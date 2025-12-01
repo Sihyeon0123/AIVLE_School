@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    </head>
+    <body>
+        <h3>* The For/Of Loop</h3>
+        <p>for of 는 기존의 forEach 와 비슷한 역활을 한다.</p>
+        <p>for of 는 Array, String, NodeLists 등 다양한 자료구조에서 데이터를 뺄 수 있다.</p>
+        <p>그리고 진행 도중 break 사용이 가능 하다.</p>
+    </body>
+    <script>
+        let array = [1,2,3,4,5];
+        let string = "forEach 와 for of 의 차이";
+
+        // 1. 일반 for
+        for(let i=0;i<array.length;i++){
+            console.log(i);            
+        }
+
+        /*2.forEach        
+        array.forEach(function(item,idx){//된다.
+            console.log(item);            
+            if(item==3){//그런데 break 는 안됨
+                break;
+            }
+            
+        });
+        
+        string.forEach(function(item,idx){//안됨
+            console.log(item);
+        });
+        */
+       
+        /*3. for of*/
+        for (let item of array) {
+            console.log(item);
+            if(item==3){//break 도 된다.
+                break;
+            }
+        }
+
+        for (let item of string) {
+            console.log(item);
+        }
+
+
+    </script>
+</html>

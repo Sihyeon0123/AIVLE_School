@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ECMA SCRIPT</title>
+    </head>
+    <body>
+
+    </body>
+    <script>    
+		/*
+		비동기 방식은 특정한 내용이 실행 후 다른 내용을 실행하는 순차 진행 상황에서 문제를 발생 시킨다.
+		이런 문제 해결을 위해서 콜백(callback), 즉 일 처리가 끝나면 실행하는 함수이다.
+		하지만 이런 콜백도 여러 단계로 일이 진행되는 경우 문제가 발생 하게 된다.
+		*/
+
+        // 먼저 콜백 함수로 동작되는 plus, multi, divide 함수가 있다.
+        function plus(a,b, onResult){
+            setTimeout(()=>{
+                onResult(a+b);
+            },100);
+        }
+
+        plus(3,4,result => console.log(result));
+
+        function multi(a,b, onResult){
+            setTimeout(()=>{
+                onResult(a*b);
+            },100);
+        }
+
+        function divide(a,b,onResult){
+            setTimeout(()=>{
+                onResult(a/b);
+            },100);
+        }
+
+        // 위 함수들을 이용해 (a+b)*c/d 의 계산을 수행한다고 가정해 보자
+
+        // a+b 를 더한 값
+        plus(3,4,r1 => console.log(r1))
+
+        // ...에 4를 곱함
+        plus(3,4,r1 => multi(r1,4,r2 => console.log(r2)))
+        
+        // ...에 2를 나눔
+        plus(3,4,r1 => multi(r1,4,r2 => divide(r2,2, r3=>console.log(r3))))
+
+        
+        //이렇게 간단한 내용도 단계가 많아질수록 콜백에 콜백을 부르게 된다
+        //이때 콜백 함수의 내용이 복잡해 지면 복잡해 질수록 가독성은 더 안좋아지게 된다.
+    </script>
+</html>

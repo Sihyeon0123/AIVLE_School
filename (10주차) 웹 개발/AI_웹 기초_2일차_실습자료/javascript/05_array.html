@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Page Title</title>
+        <style>
+
+        </style>
+	</head>
+	<body>
+		<button onclick="arrPush()">push</button>
+        <button onclick="arrPop()">pop</button>
+        <button onclick="arrUnshift()">unshift</button>
+        <button onclick="arrShift()">shift</button> 
+        <button onclick="arrSlice()">범위 자르기</button>
+	</body>
+    <script>
+        const arr = []; // const 로 상수를 선언해도 배열은 일부 수정이나 추가, 삭제는 가능하다.
+		let i = 1;
+
+        //push 함수를 사용 하면 방번호와 상관 없이 뒤로 배열을 추가 한다.
+        function arrPush(){
+            arr.push(i);
+            i++;
+            console.log(arr); 
+        }
+        //pop 함수를 사용 하면 뒤에서 부터 배열 값을 뺀다.
+         function arrPop(){
+            let num = arr.pop();
+            console.log("빠진 값 : ", num);
+            console.log(arr); 
+        }       
+        //unshift 함수를 사용하면 앞 에서 부터 배열을 추가한다.
+        function arrUnshift(){
+            arr.unshift(i);
+            i++
+            console.log(arr); 
+        }
+        
+        //shift 함수를 사용하면 앞에서 부터 배열값을 뺀다.
+        function arrShift(){            
+            let num = arr.shift();
+			console.log("빠진 값 : ", num);
+            console.log(arr); 
+        } 
+
+		//범위 자르기(원본데이터는 보존된다.)
+		function arrSlice(){
+            numArr = [0,1,2,3,4,5];
+            console.log(numArr);
+            //1번인덱스 부터 보여주고, 3번부터 버림
+			//버릴 인덱스를 지정하지 않으면 끝까지 보여준다.
+            let newArr = numArr.slice(1,3);            
+            console.log(newArr);
+            console.log(numArr);
+        }
+
+	    let infos = [
+            {id: 1, name: '김지훈', grade:'A',score:95},
+            {id: 2, name: '이지훈', grade:'C',score:70},
+            {id: 3, name: '박지훈', grade:'B',score:82},
+            {id: 4, name: '나지훈', grade:'A',score:93},
+            {id: 5, name: '라지훈', grade:'C',score:71},
+            {id: 6, name: '마지훈', grade:'C',score:70},
+        ];
+
+        /* Map : 배열 안의 값을 하나씩 추출하거나 새로운 배열을 반환        
+		map 은 배열에 있는 값을 하나씩 빼내어 특정 연산을 거쳐 배열로 반환하는 함수 이다.		
+		let newList = infos.map((item,index,array)=>{//item 을 뺀 나머지 인자는 생략 가능
+            console.log(index,item);
+            console.log(array);//개별 값을 가져온 배열            
+			return item;//이 값이 반환되어 newList 에 들어간다.
+        });
+        */
+        //기존 값에 학생 이라는 단어를 붙여 students 라는 새로운 배열을 생성
+        let students = infos.map(info => {
+            info.name += ' 학생'
+            return info;
+        });
+        console.log(students);
+
+        //당연하게 배열안의 오브젝트의 특정 값을 뽑아 새로운 배열을 만드는 것도 가능 하다.
+        let ids = infos.map(info=> info.id);
+        console.log(ids);
+		
+        //filter : 특정 조건을 만족하는 데이터 만을 보아 새로운 배열로 반환
+        let supple = students.filter(info=>{
+            return info.grade =='C';
+        });
+        console.log('보충반:',supple);
+    </script>
+</html>

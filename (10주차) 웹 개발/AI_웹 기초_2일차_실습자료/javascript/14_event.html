@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Page Title</title>
+        <style>
+            div{
+                width: 250px;
+                height: 250px;
+                background-color: yellowgreen;
+            }
+        </style>
+	</head>
+    <!--onload : html 문서가 다 읽히면 일어나는 이벤트-->
+    <body onload="alert('loading 끝')">
+        <!-- 한 요소에 여러 이벤트를 추가할 수도 있다. -->
+        <div onmouseover="mouseEvt('over')" onmouseout="mouseEvt('out')"></div>
+        <br/>
+        <!-- inline 속성을 갖은 div : 특정 문자열을 지정할때 사용-->
+        <h3>오늘의 날짜 : <span id="demo"></span></h3>
+        <input type="button" onclick="getDay()" value="날짜 추출"/>
+        <br/>
+        <input type="text" onkeydown="going(event)" value=""/>
+        <input type="text" onkeyup="typing(event)"/>
+        <h4 id="typing"></h4>
+        <select onchange="selectOne(this)">
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+            <option value="Benz">Benz</option>
+            <option value="Volvo">Volvo</option>
+        </select>
+	</body>
+    <script>
+		//어떤 이벤트가 가능한지 궁금한가?
+        let elem = document.querySelector("body");
+		//on 으로 시작하는 속성은 모두 가능한 이벤트
+		console.log(elem);//onload 를 보면 우리가 만든함수가 등록되어 있음을 알 수 있다.
+
+		function mouseEvt(arg){ // 함수에서 무언가를 주면 매개변수로 받을 수 있다.
+            console.log('mouse '+arg);
+            let elem = document.querySelector('div');            
+            elem.innerHTML = 'mouse '+arg;
+        }
+
+		function getDay(){
+            console.log(Date());
+            document.querySelector("#demo").innerHTML = Date();
+        }
+
+		function going(evt){
+            console.log(evt); // event 객체에는 이벤트에 대한 모든 정보가 담겨 있다.
+            console.log(evt.target); // 이벤트 당한 대상의 정보도...
+            let msg = evt.target.value;            
+            console.log(msg);// 한박자씩 늦는다?
+            //키 입력 후 input 에 value 가 입력되기 전에 이벤트가 발생함
+            //그래서 입력한 값이 도달하기 전의 value 를 가져오게 된다.
+            document.querySelector("#typing").innerHTML = msg;
+        }
+
+        function typing(evt){
+            document.querySelector("#typing").innerHTML = evt.target.value; ;
+        }
+
+		//change 는 요소안의 값 변화가 일어날때 발동 된다.
+		function selectOne(elem){
+            // event 와 다르게 this 는 나 자신을 의미 한다.
+            // event.target 과 같다.
+            let sel = elem.value;
+            document.querySelector("#typing").innerHTML = sel;
+        }
+    </script>
+</html>
