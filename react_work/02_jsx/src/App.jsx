@@ -1,8 +1,8 @@
 export default function App(){
 
-    let name = '김지훈';
+    let name = '양시현';
     const gender = '남자';  //코드블록 영역의 상수
-    let age = 30;           //코드 블록 영역의 변수
+    let age = 25;           //코드 블록 영역의 변수
 
     return(
         <>{/*요소를 div 로 감싸는것이 싫다면 <> 를 사용 할 수 있다.*/}
@@ -14,9 +14,20 @@ export default function App(){
                 <br/>{/*태그는 닫히지 않으면 에러가 난다.*/}
             </div>
             <div>
-                {/* 항상 참 또는 거짓인 조건식을 의도적으로 허용하기 위해 아래 내용이 추가 되어야 한다. */}
-                {/* eslint-disable-next-line no-constant-condition */}
-                {/*조건문을 추가해 봅시다.*/}
+                {1+1 === 2 ? <p>맞아요</p> : <p>틀려요</p>}{/*삼항연산자도 사용 가능*/}
+                {
+                 (()=>{
+                    if(age <= 11){
+                        return <div>어린이</div>
+                    }
+                    else if(age >= 20 && age < 65){
+                        return <div>성인</div>
+                    }
+                    else if(age >= 65){
+                        return <div>노인</div>
+                    }
+                 })()
+                }
             </div>
         </>
     );

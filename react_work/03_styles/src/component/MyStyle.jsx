@@ -6,6 +6,10 @@ import '../App.css'
 export default function MyStyle() {
     const styles = {
         /* 결과 화면처럼 나오도록 스타일을 추가해 보자 */
+        fontSize:26,
+        fontweight:600,
+        color:'blue',
+        backgroundColor:'yellowgreen'
     };
 
     return(

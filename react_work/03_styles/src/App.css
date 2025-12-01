@@ -1,5 +1,8 @@
 span{
   /* 결과 화면처럼 나오도록 스타일을 추가해 보자 */
+  color: dodgerblue;
+  font-size: 26px;
+  font-weight: 600;
 }
 
 .App-title{

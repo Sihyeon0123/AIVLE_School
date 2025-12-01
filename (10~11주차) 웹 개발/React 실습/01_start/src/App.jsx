@@ -6,7 +6,7 @@ const html = (<div>Hello, React.js</div>);
 function App() {
     return (
         <div>
-            {/* 위의 html 변수의 코드를 출력할 코드를 작성하세요 */}
+            {html}
         </div>
     );
 }
