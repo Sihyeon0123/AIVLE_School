@@ -27,11 +27,12 @@
                 var scope = "함수영역";
                 let local = "블록영역";
             }
-            console.log(scope); 
+            console.log(scope);
+            // 로컬 변수를 if문 안에 선언하여 if문 밖에서는 호출이 불가하다
             console.log(local); 
         }
         test2();
-
+        // const변수는 초기화 이후 변경이 불가
         const x = 10;
         x=30;//상수이므로 변경 불가
     </script>

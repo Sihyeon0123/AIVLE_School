@@ -22,15 +22,18 @@
         /*아래 코드의 문제점을 수정하시오*/
         // 2.forEach        
         array.forEach(function(item,idx){
-            console.log(item);            
-            if(item==3){//break 안됨
-                break;
-            }            
+            //console.log(item);
+            //if(item==3){//break 안됨
+            //    break;
+            //}
         });        
        
         /* 꺼내온 값이 3 일경우 반복문이 멈추는 코드를 작성하시오 */
         //3. for of
         for (let item of array) {
+            if(item==3){//break 안됨
+                break;
+            }
             console.log(item);
         }
 

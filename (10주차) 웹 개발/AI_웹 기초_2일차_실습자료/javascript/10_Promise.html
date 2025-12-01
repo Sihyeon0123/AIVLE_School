@@ -32,12 +32,14 @@
             return new Promise((resolve,reject)=>{
                 let result = 0;
                 setTimeout(()=>{
-                    result = 10+20;                    
+                    result = 10+20;
                     resolve('result : '+result);//resolve : 성공, reject : 실패
-                },100);                
+                },2000);
             });
         }
-        console.log(prom());//단, Promise 라는 객체로 반환하게 된다.
+        const p = prom();
+        console.log(p);//단, Promise 라는 객체로 반환하게 된다.
+        p.then(r1 => console.log(r1));
 
         /* Prom() 함수로 부터 추출된 값을 추출 하여 콘솔로 출력하기 위한 코드를 작성 하시오 */
 

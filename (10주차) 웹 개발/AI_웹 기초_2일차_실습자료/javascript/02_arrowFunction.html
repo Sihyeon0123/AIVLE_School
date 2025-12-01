@@ -19,7 +19,9 @@
         func_name('func_name:',3,5);
 
         /* 위 함수를 화살표 함수로 축약하여 아래 x1 변수에 담아보자 */
-        const x1 = null;
+        const x1 =  (x, y) => {
+            console.log(x+y);
+        };
         x1(5,5)
 
         /* 출력문만 존재하는 화살표 함수를 더 축약해 보자 */
