@@ -29,7 +29,6 @@ buildNumber.properties
 *.class
 *.log
 *.jar
-*.war
 *.ear
 *.zip
 *.tar.gz
