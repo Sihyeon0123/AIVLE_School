@@ -10,10 +10,12 @@ const counterSlicer = createSlice({
     reducers: {
         increment: (state, action) => { // reducer
             /*state 값을 1 증가시키는 코드를 추가해 보자*/
+            state.value += 1;
             return state;   
         },
         decrement: (state, action) => {
             /*state 값을 1 감소시키는 코드를 추가해 보자*/
+            state.value -= 1;       
             return state;
         },
     }

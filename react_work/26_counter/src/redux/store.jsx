@@ -5,5 +5,6 @@ import counterSlicer from "./counterSlicer";
 export const store = configureStore({
     reducer: {
         // 리듀서를 담고 있는 slicer를 counter 라는 이름으로 등록해 보자
+        counter: counterSlicer
     }
 });

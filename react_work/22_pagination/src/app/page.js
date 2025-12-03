@@ -8,8 +8,11 @@ export default function LoginPage(){
   const [info, setInfo] = useState({id:'',pw:''});
 
   useEffect(()=>{
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("id");
+    
+    if (typeof window !== "undefined") {
+      sessionStorage.removeItem("token");
+      sessionStorage.removeItem("id");
+    } 
   },[]);
 
   const input=(e)=>{

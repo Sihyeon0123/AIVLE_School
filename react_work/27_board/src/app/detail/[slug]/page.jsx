@@ -79,7 +79,7 @@ function PhotoList({photos}){
 
     content = photos.map(photo=>{
         return(
-            <tr>
+            <tr key={photo.file_idx}>
                 <th>사진</th>
                 <td>
                     <div key={photo.file_idx}>

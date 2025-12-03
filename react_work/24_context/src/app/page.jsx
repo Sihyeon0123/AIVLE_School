@@ -7,10 +7,10 @@ export default function App(){
     /* 교안의 예시처럼 Context App Data 라는 문자열을 
     최종 도착지에서 받을 수 있도록 토드를 넣어보자 */
     return (
-        <>
+        <DataContext.Provider value="Context App Data">
             <First/>
             <Island/>
-        </>
+        </DataContext.Provider>
     );
 }
 

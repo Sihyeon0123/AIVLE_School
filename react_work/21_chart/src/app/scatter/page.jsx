@@ -29,10 +29,20 @@ export default function Page(){
     ];
 
     return (<>
-            <div style={{width: '30%', float: 'left'}}>
+            <div style={{width: '100%', float: 'left'}}>
                 {/* 교안에 있는 그래프 모양이 나타나도록 차트를 추가해 보자 */}
+                <ScatterChart
+                    series={[
+                        {label:'A', data:data.map(d=>({x:d.x1, y:d.y1}))},
+                        {label:'B', data:data.map(d=>({x:d.x2, y:d.y2}))},
+                    ]} /* 차트에 사용할 데이터 */
+                    width={600} /* 차트 가로 크기*/
+                    height={300} /* 차트 세로 크기*/
+                    /*눈금 표시 여부*/
+                    grid={{ vertical: true, horizontal: true }}
+                />
             </div>
-            <div style={{width: '30%', float: 'left'}}>
+            <div style={{width: '100%', float: 'left'}}>
                 <ScatterChart
                     series={[
                         {
@@ -56,7 +66,7 @@ export default function Page(){
                     height={300}
                 />
             </div>
-            <div style={{width: '30%', float: 'left'}}>
+            <div style={{width: '100%', float: 'left'}}>
                 <ScatterChart
                     series={[
                         {

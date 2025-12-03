@@ -4,8 +4,20 @@ import {LineChart} from "@mui/x-charts/LineChart";
 export default function Page(){
 
     return (<>
-            <div style={{width: '30%', float: 'left'}}>
-                {/* 교안에 있는 그래프 모양이 나타나도록 차트를 추가해 보자 */}
+            <div style={{width: '50%', float: 'left'}}>
+                <LineChart
+                    /*scaleType:'band' 가 있어야 data 에 문자열이 들어갈 수 있음*/
+                    xAxis={[{scaleType:'band'
+                            ,data:['1월','2월','3월','4월','5월','6월']}]}
+                    series={[{
+                        data: [2, 5.5, 2, 8.5, 1.5, 5],
+                        curve: 'step'
+                    },]}
+                    width={500} /*차트 가로 크기*/
+                    height={300} /*차트 세로 크기*/
+                    grid={{ vertical: true, horizontal: true }}
+                    />
+
             </div>
 
             <div style={{width: '30%', float: 'left'}}>

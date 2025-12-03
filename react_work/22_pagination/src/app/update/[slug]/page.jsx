@@ -21,8 +21,8 @@ export default function UpdatePage(props){
     },[]);
 
     const getDetail=async(idx)=>{
-        const id = sessionStorage.getItem("id");
-        const token = sessionStorage.getItem("token");
+        const id = typeof window === "undefined" ? "" : sessionStorage.getItem("id");
+        const token = typeof window === "undefined" ? "" : sessionStorage.getItem("token");
         const {data} = await axios.get(`http://localhost/update_view/${id}/${idx}`,{headers:{Authorization:token}});
         console.log(data);
         setInfo(data.detail);

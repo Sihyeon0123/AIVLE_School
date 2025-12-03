@@ -75,6 +75,12 @@ export default function ListPage(props){
                     <th colSpan="6">
                         <div style={{"display":"flex","justify-content": "center"}}>
                             {/* 교안에 있는 모양이 나타나도록 코드를 추가해 보자 */}
+                            <Stack spacing={2}>
+                                <Pagination 
+                                count={pages} 
+                                color="primary" 
+                                onChange={changePage}/>
+                            </Stack>
                         </div>
                     </th>
                 </tr>

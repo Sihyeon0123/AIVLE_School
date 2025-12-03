@@ -1,7 +1,7 @@
 export default function Layout({ children }) {
 
   /*발급받은 키를 적용해 보자*/
-  const api_key = '발급받은 Java Script Key';
+  const api_key = 'YOUR_API_KEY';
 
   return (
       <html lang="ko">

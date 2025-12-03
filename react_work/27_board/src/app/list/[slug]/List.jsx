@@ -38,7 +38,7 @@ export default function List({board}){
                                     color={"primary"}
                                     variant={"outlined"}
                                     shape={"rounded"}
-                                    siblingCount={0}    // 현재 페이지 양족에 표시할 갯수(중간정도 왔을때)
+                                    siblingCount={2}    // 현재 페이지 양족에 표시할 갯수(중간정도 왔을때)
                                     onChange={changePage}
                         />
                     </Stack>

@@ -7,8 +7,8 @@ import Image from "next/image";
 export default function WritePage(){
 
     const [info,setInfo]=useState({subject:'',content:'',user_name:''});
-    const id = sessionStorage.getItem("id");
-    const token = sessionStorage.getItem("token");
+    const id = typeof window === "undefined" ? "" : sessionStorage.getItem("id");
+    const token = typeof window === "undefined" ? "" : sessionStorage.getItem("token");
 
     const [prev,setPrev]=useState([]); // 미리보기 이미지
     const [upload,setUpload]=useState([]); // 업로드 파일
