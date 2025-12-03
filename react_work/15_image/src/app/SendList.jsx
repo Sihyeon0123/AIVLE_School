@@ -5,10 +5,11 @@ import {useState} from "react"; // useState 등 몇몇 함수에 대해서 use s
 
 export default function SendList({url}) {
 
+    //axios.method(url,{config}).then().catch().finally();
+    // 그러기 위해서는 state 필수
     const [list, setList] = useState([]);
 
     const send= async ()=>{
-	    //axios.method(url,{config}).then().catch().finally();
         let {data} = await axios.get(url);
         //console.log(data); // 이 내용을 표시해 보자!
         setList(data);

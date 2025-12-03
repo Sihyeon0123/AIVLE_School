@@ -1,3 +1,7 @@
+// 1. 구성편집 > 새 실행 구성 추가
+// 2. npm 선택
+// 3. 명령어 run
+// 4. 스크립트 dev
 import Image from "next/image";
 import styles from "./page.module.css";
 

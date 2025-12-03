@@ -16,18 +16,18 @@ export default function LoginPage(){
     setInfo({...info,[e.target.name]:e.target.value});
   }
 
+  // async 를 썼는데 use client 를 쓸 수 있다?
+  // component 에 사용한것이 아니라서 그렇다.
   const login=async()=>{
     let {data} = await axios.post("http://localhost/login",info);
     console.log(data);
-    /* 받아온 data 를 이용해 로그인 로직을 추가해 보자*/
-    if(data.result === "success"){
+    if(data.success){
       sessionStorage.setItem("token",data.token);
       sessionStorage.setItem("id",info.id);
-      alert("로그인 성공");
-      window.location.href="/list/1";
+      location.href='/list/1';
     }else{
-      alert("로그인 실패");
-    } 
+      alert('아이디 또는 비밀번호를 확인해 주세요!');
+    }
   }
 
   return(

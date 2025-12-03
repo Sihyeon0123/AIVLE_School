@@ -2,7 +2,7 @@
 import {useEffect, useRef, useState} from "react";
 import Link from "next/link";
 import './List.css';
-import axios from "axios"; 
+import axios from "axios"; //npm install axios
 
 
 export default function PostList({page}) {

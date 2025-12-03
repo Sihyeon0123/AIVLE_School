@@ -7,12 +7,39 @@ export default function Write() {
 
     const [info, setInfo] = useState({user_name:'', subject:'',content:''});
     const input=(key,e)=>{
-        /* 1. 입력 내용 state 에 저장 로직 */
+        setInfo({
+            ...info,
+            [key]:e.target.value,
+        });
     }
     const write = async()=>{
-        /* 2. 글쓰기 저장 요청 로직 */
+        console.log(info);
+        const {data}= await axios.post('http://localhost/write',info);
+        console.log(data);
+        if(data.success){
+            alert('글쓰기에 성공 하였습니다.');
+            location.href='/detail/'+data.idx;
+        }else{
+            alert('글쓰기에 실패 하였습니다.');
+        }
     }
     return (
-        <div className="write">{/* 글쓰기 UI 출력*/}</div>
+        <div className="write">
+            <div className="header">
+                <div>
+                    <input type="text" value={info.user_name} placeholder="작 성 자" onChange={(e)=>{input('user_name',e)}}/>
+                </div>
+            </div>
+            <div className="title">
+                <input type="text" value={info.subject} placeholder="글 제 목" onChange={(e)=>{input('subject',e)}}/>
+            </div>
+            <hr/>
+            <div><textarea onChange={(e)=>{input('content',e)}} value={info.content}></textarea></div>
+            <hr/>
+            <div className="btn_area">
+                <Link href="/">리스트</Link>
+                <button onClick={write}>글쓰기</button>
+            </div>
+        </div>
     );
 }

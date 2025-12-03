@@ -18,7 +18,15 @@ export default function DetailPage(props){
     },[]);
 
     const getDetail=async(idx)=>{
-        /*로그인 검증 후 상세보기와 사진 데이터로 UI 를 작성하는 코드를 추가해 보자*/
+        const id = sessionStorage.getItem("id");
+        const token = sessionStorage.getItem("token");
+        const {data} = await axios.get(`http://localhost/detail/${id}/${idx}`,{headers:{Authorization:token}});
+        console.log(data);
+        setInfo(data.detail);
+
+        if(data.photos.length>0){
+            setList(<PhotoList photos={data.photos}/>);
+        }
     }
 
     const del=async()=>{

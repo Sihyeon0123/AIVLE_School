@@ -22,10 +22,11 @@ export default function App() {
                 </ul>
             </div>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/first" element={<First />} />
-                <Route path="/second" element={<Second />} />
-                <Route path="/topics/*" element={<Topics />} />
+                <Route path='/' element={<Home/>}/>
+                <Route path='/first' element={<First/>}/>
+                <Route path='/second' element={<Second/>}/>
+                {/*topics/ 이후 서브 URL 이 있을 경우*/}
+                <Route path='/topics/*' element={<Topics/>}/>
             </Routes>
         </BrowserRouter>
     );

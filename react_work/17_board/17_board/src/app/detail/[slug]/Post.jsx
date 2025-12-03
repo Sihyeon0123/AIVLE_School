@@ -7,13 +7,59 @@ import "./Post.css";
 export default function Post({idx}){
 
     const [post,setPost] = useState(null);
-	// 1. 시작하자 마자 리스트를 호출하고
+
     useEffect(()=>{
-        /* 2.makeHTML() 호출 */
+        // 그래서 await - async 를 사용하지 않는다.
+        axios.get(`http://localhost/detail/${idx}`).then(({data})=>{
+            console.log(data);
+            makeHTML(data.post);
+        });
     },[]);
 
     const makeHTML = (info) => {
-		/* 3. 받아온 info 로 페이지를 만들어서 state 에 저장 */
+        console.log(info);
+        let html = (
+            <div>
+                게시물이 존재하지 않습니다.
+                <p>
+                    <Link href="/">돌아가기</Link>
+                </p>
+            </div>
+        );
+
+        const del = async(idx) => {
+            console.log('delete '+idx);
+            const {data} = await axios.get(`http://localhost/delete/${idx}`);
+            console.log(data);
+            if(data.success){
+                alert(data.idx+' 번 삭제가 성공 하였습니다.');
+                location.href = '/';
+            }else{
+                alert(data.idx+' 번 삭제가 실패 하였습니다.');
+            }
+        }
+
+        if(info != null){
+            html = (
+                <div>
+                    <div className="header">
+                        <div>작성자 : {info.user_name}</div>
+                        <div>조회수 : {info.bHit}</div>
+                    </div>
+                    <div className="title">
+                        제목 : {info.subject}
+                    </div>
+                    <hr/>
+                    <div>{info.content}</div>
+                    <hr/>
+                    <div className="btn_area">
+                        <Link href="/">리스트</Link>
+                        <button onClick={()=>{del(info.idx)}}>삭제</button>
+                    </div>
+                </div>
+            );
+        }
+        setPost(html);
     }
 
     return(
