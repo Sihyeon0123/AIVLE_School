@@ -4,7 +4,11 @@ import Link from "next/link";
 import axios from "axios";
 import {store} from "@/redux/store";
 import {useSelector} from "react-redux";
+import { useSearchParams } from "next/navigation";
+
 export default function DetailPage(props){
+    const searchParams = useSearchParams();
+    const page = Number(searchParams.get("page")) || 1;
 
     const [list,setList]=useState('');
 
@@ -58,7 +62,7 @@ export default function DetailPage(props){
                 <PhotoList photos={info.photos}/>
                 <tr>
                     <th colSpan="2">
-                        <Link href={"/list/1"}>
+                        <Link href={"/list/" + page + "?page=" + page}>
                             <input type="button" value="리스트"/>
                         </Link>
                         <input type="button" value="삭제" onClick={()=>{del(info.detail.idx)}}/>
