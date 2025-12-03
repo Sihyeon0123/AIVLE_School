@@ -21,5 +21,15 @@ export default function SendList({url}) {
 }
 
 function Post({list}) {
-    /* 받아온 List 가 표출되도록 코드를 작성해 보자*/
+    // map: 배열의 내용을 하나씩 처리 후 하나의 배열로 반환
+    let post_list = list.map(function(item){
+        console.log(item);
+        return (<li>{item.id}: {item.title}</li>);
+    });
+    console.log(post_list);
+    return (
+        <ul>
+            {post_list.length > 0 ? post_list : <li>데이터가 없습니다.</li>}
+        </ul>
+    );
 }

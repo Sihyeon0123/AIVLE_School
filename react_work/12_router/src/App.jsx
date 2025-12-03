@@ -22,7 +22,10 @@ export default function App() {
                 </ul>
             </div>
             <Routes>
-                {/* 위 링크를 통해 특정 컴포넌트로 이동되는 내용을 작성하시오 */}
+                <Route path="/" element={<Home />} />
+                <Route path="/first" element={<First />} />
+                <Route path="/second" element={<Second />} />
+                <Route path="/topics/*" element={<Topics />} />
             </Routes>
         </BrowserRouter>
     );

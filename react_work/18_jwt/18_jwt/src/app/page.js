@@ -20,6 +20,14 @@ export default function LoginPage(){
     let {data} = await axios.post("http://localhost/login",info);
     console.log(data);
     /* 받아온 data 를 이용해 로그인 로직을 추가해 보자*/
+    if(data.result === "success"){
+      sessionStorage.setItem("token",data.token);
+      sessionStorage.setItem("id",info.id);
+      alert("로그인 성공");
+      window.location.href="/list/1";
+    }else{
+      alert("로그인 실패");
+    } 
   }
 
   return(

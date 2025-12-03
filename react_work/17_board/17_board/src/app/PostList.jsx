@@ -2,7 +2,7 @@
 import {useEffect, useRef, useState} from "react";
 import Link from "next/link";
 import './List.css';
-import axios from "axios"; //npm install axios
+import axios from "axios"; 
 
 
 export default function PostList({page}) {
@@ -11,16 +11,33 @@ export default function PostList({page}) {
 
     // 1. 시작하자 마자 리스트를 호출하고
     useEffect(()=>{
-		/* 2. makeItem() 호출 */
+        axios({method: "get", url: 'http://localhost/list/'+page})
+            .then(({data})=>{
+                console.log(data);
+                makeItem(data);
+            });
     },[]);
 
     const makeItem=(data) => {
-		    /* 3. 받아온 데이터로 list 를 만들고… state 에 저장 */
+        console.log(data);
+        let {list} = data;
+
+        let content = list.map((post)=>(
+            <div key={post.idx} className="post">
+                <Link href={`/detail/${post.idx}`}>
+                    <div className="title">
+                        {post.idx} : {post.subject}
+                        <span className="cnt">[{post.bHit}]</span>
+                    </div>
+                </Link>
+                <div className="sub">{post.user_name}</div>
+            </div>
+        ));
         setPosts(content);
     };
 
     return(
         <div>
-            {posts} {/*state 인 posts 출력*/}
+            {posts}
         </div>);
 }

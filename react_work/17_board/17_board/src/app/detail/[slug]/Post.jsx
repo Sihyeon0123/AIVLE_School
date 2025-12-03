@@ -17,6 +17,6 @@ export default function Post({idx}){
     }
 
     return(
-        <div>{post}</div> {/*state 인 post 출력*/}
+        <div>{post}</div>
     );
 }
