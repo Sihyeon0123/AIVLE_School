@@ -34,6 +34,6 @@ public class CalculateAverage {
         }catch (ArithmeticException e){
             System.out.println("입력된 학생의 점수가 없습니다. 다시 실행하세요.");
         }
-
+        scanner.close();
     }
 }

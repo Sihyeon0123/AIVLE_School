@@ -3,6 +3,7 @@ package com.chap10;
 import java.util.Set;
 import java.util.TreeSet;
 
+@SuppressWarnings("unused")
 public class TreeSetMain {
     public static void main(String[] args) {
         Set<Integer> numbers = new TreeSet<>();
@@ -27,7 +28,7 @@ public class TreeSetMain {
         System.out.println("TreeSet after removing 10: " + numbers);
 
         // 첫 번째 요소와 마지막 요소 접근
-        System.out.println("First element: " + ((TreeSet)numbers).first());
-        System.out.println("Last element: " + ((TreeSet)numbers).last());
+        System.out.println("First element: " + ((TreeSet<Integer>)numbers).first());
+        System.out.println("Last element: " + ((TreeSet<Integer>)numbers).last());
     }
 }

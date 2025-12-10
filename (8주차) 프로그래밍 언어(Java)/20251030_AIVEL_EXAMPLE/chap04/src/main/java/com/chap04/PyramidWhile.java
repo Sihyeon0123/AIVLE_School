@@ -21,5 +21,6 @@ public class PyramidWhile {
             System.out.println("");
             i++;
         }
+        sc.close();
     }
 }

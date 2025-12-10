@@ -19,6 +19,7 @@ public class Calc {
         return 2 * Calc.PI * rad;
     }
 }
+@SuppressWarnings("unused")
 class CalcMain{
     public static void main(String[] args) {
         Calc c = new Calc(); // 생성자
@@ -30,10 +31,10 @@ class CalcMain{
         double dc = Calc.circ(10); // 클레스 메소드 호출, c.circ(10) -> Calc.circ(10)
         // c.PI == Calc.PI 동일한 변수 클레스변수 -> Calc.PI
         // c.PI -> Calc.PI
-        System.out.println("넓이 : " + da + " 원주률 : "+ c.PI);
+        System.out.println("넓이 : " + da + " 원주률 : "+ Calc.PI);
         System.out.println("둘레 : " + dc + " 원주률 : "+ Calc.PI);
 
-        System.out.println("총 만들어진 객체의 수 : "+ c3.objCount); // Calc.objCount
+        System.out.println("총 만들어진 객체의 수 : "+ Calc.objCount); // Calc.objCount
     }
 }
 

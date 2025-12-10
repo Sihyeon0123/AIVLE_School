@@ -1,5 +1,6 @@
 package com.chap09.ex02_unchecked;
 
+@SuppressWarnings("unused")
 public class ArrayIndexOutOfBoundsExceptionExample {
     public static void main(String[] args) {
         int number = 0;

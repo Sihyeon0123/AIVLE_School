@@ -34,6 +34,7 @@ class Person0 {
     }
 }
 
+@SuppressWarnings("unused")
 class Person0Main {
     private String name;
     public static void main(String[] args) {

@@ -22,6 +22,7 @@ class ColorBox extends Box{
     }
 }
 
+@SuppressWarnings("unused")
 class InheritanceConstructorMain{
     public static void main(String[] args) {
         ColorBox cBox = new ColorBox(2, "red");

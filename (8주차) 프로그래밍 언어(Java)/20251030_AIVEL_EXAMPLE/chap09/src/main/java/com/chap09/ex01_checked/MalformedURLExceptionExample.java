@@ -4,6 +4,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
+@SuppressWarnings("unused")
 public class MalformedURLExceptionExample {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -17,6 +18,7 @@ public class MalformedURLExceptionExample {
                 continue;
             }
             System.out.println( strUrl + " 입력한 URL은 유효합니다.");
+            sc.close();
         }
     }
 }

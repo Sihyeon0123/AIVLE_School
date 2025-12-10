@@ -14,5 +14,6 @@ public class Main {
         
         Sihyeon sihyeon = applicationContext.getBean("sihyeon", Sihyeon.class);
         sihyeon.usePhones();
+        ((AnnotationConfigApplicationContext) applicationContext).close();
     }
 }

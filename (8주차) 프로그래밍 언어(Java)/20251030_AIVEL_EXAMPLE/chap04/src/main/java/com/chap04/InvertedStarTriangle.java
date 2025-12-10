@@ -15,5 +15,6 @@ public class InvertedStarTriangle {
             }
             System.out.println("");
         }
+        sc.close();
     }
 }

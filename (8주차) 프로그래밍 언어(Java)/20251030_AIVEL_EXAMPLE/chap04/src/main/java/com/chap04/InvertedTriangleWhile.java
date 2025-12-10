@@ -21,5 +21,6 @@ public class InvertedTriangleWhile {
             System.out.println("");
             i++;
         }
+        sc.close();
     }
 }

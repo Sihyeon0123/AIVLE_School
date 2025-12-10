@@ -16,6 +16,7 @@ public class Person {
     }
 }
 
+@SuppressWarnings("unused")
 class PersonMain{
     public static void main(String[] args) {
         Person person = new Person();
@@ -30,7 +31,7 @@ class PersonMain{
 
         String strNum = "1000";
         int intNum= Integer.parseInt(strNum);
-        intNum = intObj.parseInt("2000"); // Integer.parseInt("2000");
+        intNum = Integer.parseInt("2000"); // Integer.parseInt("2000");
         //클래스명.정적메소드()
         System.out.println(intNum+2);
 

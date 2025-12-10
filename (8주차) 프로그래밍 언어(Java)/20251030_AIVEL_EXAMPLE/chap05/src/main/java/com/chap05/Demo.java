@@ -1,5 +1,6 @@
 package com.chap05;
 
+@SuppressWarnings("unused")
 public class Demo {
     // 필드영역(인스턴스 변수들), 객체 맴버변수
     int field;

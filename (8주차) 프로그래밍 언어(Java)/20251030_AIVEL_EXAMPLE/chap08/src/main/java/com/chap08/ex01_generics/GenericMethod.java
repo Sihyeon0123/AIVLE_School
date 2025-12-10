@@ -1,5 +1,6 @@
 package com.chap08.ex01_generics;
 
+@SuppressWarnings("unused")
 public class GenericMethod {
     public static <T, V> boolean compare(People<T, V> person1, People<T, V> person2){
         boolean nameCompare = person1.getName().equals(person2.getName());

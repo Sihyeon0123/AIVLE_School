@@ -1,4 +1,6 @@
 package com.chap06.ex05_access;
+
+@SuppressWarnings("unused")
 public class Parent {
     public String publicVar = "public: 모든 클래스에서 접근 가능";
     protected String protectedVar = "protected: 같은 패키지 또는 상속받은 클래스에서 접근 가능";

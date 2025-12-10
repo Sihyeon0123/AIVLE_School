@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class HashSetSpeed {
 
     public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class HashSetSpeed {
 
         long startTime = System.nanoTime();
         boolean foundInHashSet = hashSet.contains(size - 1);
+        
         long endTime = System.nanoTime();
         long durationHashSet = endTime - startTime;
 

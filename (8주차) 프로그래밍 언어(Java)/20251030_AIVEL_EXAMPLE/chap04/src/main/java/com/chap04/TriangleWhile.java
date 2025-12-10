@@ -15,5 +15,6 @@ public class TriangleWhile {
             System.out.println("");
             i++;
         }
+        sc.close();
     }
 }

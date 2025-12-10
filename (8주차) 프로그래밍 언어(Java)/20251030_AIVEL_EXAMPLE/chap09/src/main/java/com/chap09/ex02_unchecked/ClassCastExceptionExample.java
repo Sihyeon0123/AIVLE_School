@@ -1,5 +1,6 @@
 package com.chap09.ex02_unchecked;
 
+@SuppressWarnings("unused")
 public class ClassCastExceptionExample {
     public static void main(String[] args) {
         try{

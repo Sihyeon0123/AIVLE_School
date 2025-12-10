@@ -24,6 +24,7 @@ class ColorBox extends Box {
 }
 
 // 실행 클래스
+@SuppressWarnings("unused")
 public class InheritanceConstructorMain {
     public static void main(String[ ] args) {
         // ColorBox 객체 생성

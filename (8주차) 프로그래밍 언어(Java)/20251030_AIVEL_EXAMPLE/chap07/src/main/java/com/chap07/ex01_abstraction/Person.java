@@ -9,7 +9,7 @@ public class Person implements Comparable<Person>{
     }
     @Override
     public int compareTo(Person o) {
-        return this.age - o.age;
+        return Integer.compare(this.age, o.age);
     }
     // 'Person' 객체의 정보를 출력하는 메서드
     public void printInfo() {
