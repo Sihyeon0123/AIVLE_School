@@ -32,7 +32,7 @@ buildNumber.properties
 *.log
 *.jar
 *.ear
-*.zip
+#*.zip
 *.tar.gz
 *.rar
 
